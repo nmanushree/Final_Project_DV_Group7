@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization Dashboard</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h1 style="text-align: center;"> Global Trends in Data Employment: A Visual Overview</h1>
+        <p> Welcome to our interactive exploration of data-related employment trends around the globe. As technology continues to drive changes in the workforce, understanding the distribution and dynamics of data jobs becomes crucial. This webpage is designed to visually navigate through the complex landscape of data employment, offering a bird's-eye view of how different regions are adapting and evolving within the data economy. Here, we focus on showcasing the diversity and scale of data professions worldwide, highlighting the strategic importance of data roles in various industries. Dive into our visual content to gain insights into the global patterns and opportunities that define today’s data-driven job market.<br></p>
+        <h2>Global Data Pay Insights</h2>
+        <p>Explore our interactive map to see how average salaries in data-related jobs vary across different countries. Utilize the year filter to select a specific timeframe and observe the changes in salary levels during that year. The map uses a color gradient to visually represent these differences: darker shades indicate higher average salaries, making it easy to spot the countries with the highest pay in the selected year. Dive into the data to discover global salary trends and gain insights into the economic landscape of data professions worldwide.</p>
+        <p> Filter by Year to See Salary Changes:</p>
+        <div class="button-container">
+            <button id="year2020">2020</button>
+            <button id="year2021">2021</button>
+            <button id="year2022">2022</button>
+            <button id="year2023">2023</button>
+        </div>
+    </div>
+
+    <div id="map">
+        <svg id="mapSVG" width="1400" height="400"></svg>
+        <div id="tooltip" style="position: absolute; display: none;"></div>
+    </div>
+    <script src="Location_Analysis.js"></script>
+
+    <div class="visualization-container">
+        <div id="Chart1">
+            <div class="content">
+                <h2>Tracking Employment Trends in the Data Industry (2020-2023)</h2>
+                <p>This line graph presents an insightful overview of employment trends within the data industry from 2020 through 2023. Each colored line tracks the trajectory of a specific data-related specialization—ranging from Data Engineering to Cloud and Database Management—illustrating the dynamic changes in job availability over the four-year span. Key observations include the notable rise in demand for skills in Machine Learning and AI, as well as a steady increase in Cloud and Database roles, indicating a shift in industry focus towards these areas. The graph provides a visual narrative of how the data employment landscape is evolving, highlighting areas of growth and those with more variable demand. This representation serves as a useful tool for professionals and students alike to understand current trends and potential career opportunities within the data sector.</p>
+            </div>
+        <div id="histogram">
+            <div id="my_dataviz"></div>
+        </div>
+        </div>
+        <script src="Histogram_Analysis.js"></script>
+
+        <div class="Chart2">
+            <div id="bargraph">
+                <svg id="bargraphSVG" width="1040" height="680"></svg>
+            </div>
+            <div class="graph-text">
+                <h2>Comparative Analysis of Average Salaries by Data Job Category</h2>
+                <p>Adjacent to this vivid bar chart is a detailed analysis revealing the average salaries across various job categories within the data sector. From Machine Learning and AI to Data Quality and Operations, the graph delineates a compelling story of remuneration that correlates with the demand and specialization of each role. It becomes evident that certain expertise, particularly in emerging technologies like Machine Learning, commands higher salaries, underscoring the premium on skills that are at the forefront of digital transformation. This information is pivotal for professionals navigating their career paths, as it offers a benchmark for salary expectations in the industry and highlights the value placed on specialized data skills in a competitive market.</p>
+                <text> To view additional comparison graphs <a href="button.html" style="font-size:large"><b> Click here</a>.</text>
+            </div>
+        </div>
+        <script src="Bar_Chart_Comparison.js"></script>
+
+        <div class="Chart3">
+            <div class="Text3">
+                <h2>Salary Trajectories Across Experience Levels</h2>
+                <p>This intricate parallel plot offers a comprehensive visualization of data industry salaries across different experience levels, from entry-level to executive positions. Each colorful line represents an individual's salary trajectory over time, intersecting across two axes: the work year and the salary in USD. The density of lines and their distribution give us an immediate visual cue into common salary ranges within each experience category. Noticeably, executive-level positions, indicated by the red lines, generally track towards the higher end of the salary spectrum, demonstrating the premium placed on top-tier experience and leadership. This plot not only serves to highlight the variability and range of salaries within the data sector but also underscores the potential for career growth, as individuals advance from entry-level to more senior roles over the years. Such a visualization is a potent tool for job seekers, HR professionals, and policy-makers, providing an at-a-glance comparison of earnings potential across the industry's spectrum.</p>
+            </div>
+            <div id="parallelPlot">
+                <svg width="960" height="500"></svg>
+            </div>
+        </div>
+        <script src="Parallel_Coord_Analysis.js"></script>
+</body>
+</html>

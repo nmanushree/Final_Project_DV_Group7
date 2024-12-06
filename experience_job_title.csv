@@ -1,0 +1,264 @@
+experience_level,job_title,count
+Entry-level,AI Developer,6
+Entry-level,AI Engineer,2
+Entry-level,AI Programmer,4
+Entry-level,AI Research Engineer,2
+Entry-level,AI Scientist,5
+Entry-level,Analytics Engineer,6
+Entry-level,Applied Data Scientist,4
+Entry-level,Applied Machine Learning Scientist,2
+Entry-level,Applied Scientist,8
+Entry-level,Azure Data Engineer,1
+Entry-level,BI Analyst,1
+Entry-level,BI Data Analyst,7
+Entry-level,BI Data Engineer,1
+Entry-level,BI Developer,4
+Entry-level,Big Data Engineer,2
+Entry-level,Business Data Analyst,5
+Entry-level,Business Intelligence Analyst,2
+Entry-level,Business Intelligence Data Analyst,1
+Entry-level,Cloud Data Engineer,2
+Entry-level,Compliance Data Analyst,2
+Entry-level,Computer Vision Engineer,4
+Entry-level,Computer Vision Software Engineer,3
+Entry-level,Data Analyst,119
+Entry-level,Data Analytics Consultant,1
+Entry-level,Data Analytics Engineer,1
+Entry-level,Data Engineer,88
+Entry-level,Data Integration Specialist,10
+Entry-level,Data Management Analyst,2
+Entry-level,Data Manager,2
+Entry-level,Data Quality Analyst,2
+Entry-level,Data Quality Engineer,1
+Entry-level,Data Science Consultant,6
+Entry-level,Data Science Engineer,1
+Entry-level,Data Scientist,92
+Entry-level,Data Specialist,1
+Entry-level,Deep Learning Engineer,2
+Entry-level,Finance Data Analyst,1
+Entry-level,Financial Data Analyst,2
+Entry-level,ML Engineer,5
+Entry-level,MLOps Engineer,2
+Entry-level,Machine Learning Developer,5
+Entry-level,Machine Learning Engineer,21
+Entry-level,Machine Learning Research Engineer,2
+Entry-level,Machine Learning Scientist,3
+Entry-level,Marketing Data Engineer,1
+Entry-level,Product Data Analyst,2
+Entry-level,Research Analyst,10
+Entry-level,Research Engineer,16
+Entry-level,Research Scientist,23
+Entry-level,Staff Data Analyst,1
+Mid-level,AI Developer,3
+Mid-level,AI Engineer,10
+Mid-level,AI Research Engineer,2
+Mid-level,AI Scientist,8
+Mid-level,AWS Data Architect,1
+Mid-level,Analytics Engineer,37
+Mid-level,Applied Data Scientist,3
+Mid-level,Applied Machine Learning Engineer,2
+Mid-level,Applied Machine Learning Scientist,6
+Mid-level,Applied Scientist,30
+Mid-level,Autonomous Vehicle Technician,2
+Mid-level,BI Analyst,6
+Mid-level,BI Data Analyst,7
+Mid-level,BI Developer,16
+Mid-level,Big Data Engineer,3
+Mid-level,Business Data Analyst,9
+Mid-level,Business Intelligence Analyst,16
+Mid-level,Business Intelligence Data Analyst,1
+Mid-level,Business Intelligence Developer,3
+Mid-level,Business Intelligence Engineer,12
+Mid-level,Business Intelligence Manager,2
+Mid-level,Business Intelligence Specialist,2
+Mid-level,Cloud Data Engineer,1
+Mid-level,Computer Vision Engineer,3
+Mid-level,Computer Vision Software Engineer,1
+Mid-level,Data Analyst,363
+Mid-level,Data Analytics Consultant,1
+Mid-level,Data Analytics Engineer,2
+Mid-level,Data Analytics Lead,2
+Mid-level,Data Analytics Manager,20
+Mid-level,Data Architect,21
+Mid-level,Data DevOps Engineer,1
+Mid-level,Data Developer,4
+Mid-level,Data Engineer,468
+Mid-level,Data Infrastructure Engineer,4
+Mid-level,Data Lead,2
+Mid-level,Data Manager,56
+Mid-level,Data Modeler,4
+Mid-level,Data Modeller,2
+Mid-level,Data Operations Analyst,2
+Mid-level,Data Operations Engineer,6
+Mid-level,Data Operations Specialist,2
+Mid-level,Data Product Manager,2
+Mid-level,Data Product Owner,2
+Mid-level,Data Quality Analyst,6
+Mid-level,Data Science Consultant,9
+Mid-level,Data Science Engineer,3
+Mid-level,Data Science Lead,13
+Mid-level,Data Science Manager,10
+Mid-level,Data Scientist,327
+Mid-level,Data Scientist Lead,1
+Mid-level,Data Specialist,20
+Mid-level,Data Strategist,4
+Mid-level,Decision Scientist,6
+Mid-level,Deep Learning Engineer,4
+Mid-level,Director of Data Science,2
+Mid-level,ETL Developer,2
+Mid-level,ETL Engineer,2
+Mid-level,Financial Data Analyst,2
+Mid-level,Head of Data,1
+Mid-level,Head of Data Science,1
+Mid-level,Insight Analyst,8
+Mid-level,Lead Data Analyst,2
+Mid-level,Lead Data Engineer,1
+Mid-level,Lead Data Scientist,2
+Mid-level,ML Engineer,25
+Mid-level,MLOps Engineer,7
+Mid-level,Machine Learning Developer,1
+Mid-level,Machine Learning Engineer,131
+Mid-level,Machine Learning Infrastructure Engineer,4
+Mid-level,Machine Learning Research Engineer,2
+Mid-level,Machine Learning Researcher,10
+Mid-level,Machine Learning Scientist,12
+Mid-level,Machine Learning Software Engineer,2
+Mid-level,Machine Learning Specialist,2
+Mid-level,NLP Engineer,2
+Mid-level,Power BI Developer,1
+Mid-level,Principal Data Analyst,1
+Mid-level,Principal Data Scientist,1
+Mid-level,Product Data Analyst,2
+Mid-level,Research Analyst,7
+Mid-level,Research Engineer,22
+Mid-level,Research Scientist,58
+Mid-level,Sales Data Analyst,1
+Mid-level,Software Data Engineer,1
+Mid-level,Staff Data Analyst,1
+Senior,AI Architect,11
+Senior,AI Developer,9
+Senior,AI Engineer,24
+Senior,AI Programmer,1
+Senior,AI Scientist,4
+Senior,Analytics Engineer,201
+Senior,Analytics Engineering Manager,1
+Senior,Applied Data Scientist,4
+Senior,Applied Machine Learning Scientist,4
+Senior,Applied Scientist,234
+Senior,Azure Data Engineer,1
+Senior,BI Analyst,22
+Senior,BI Data Analyst,1
+Senior,BI Developer,32
+Senior,Big Data Architect,2
+Senior,Big Data Engineer,3
+Senior,Business Data Analyst,4
+Senior,Business Intelligence Analyst,36
+Senior,Business Intelligence Developer,12
+Senior,Business Intelligence Engineer,128
+Senior,Business Intelligence Specialist,2
+Senior,Cloud Data Architect,1
+Senior,Cloud Data Engineer,1
+Senior,Cloud Database Engineer,5
+Senior,Computer Vision Engineer,18
+Senior,Computer Vision Software Engineer,1
+Senior,Consultant Data Engineer,1
+Senior,Data Analyst,892
+Senior,Data Analytics Engineer,2
+Senior,Data Analytics Lead,1
+Senior,Data Analytics Manager,16
+Senior,Data Analytics Specialist,2
+Senior,Data Architect,190
+Senior,Data DevOps Engineer,1
+Senior,Data Developer,2
+Senior,Data Engineer,1534
+Senior,Data Infrastructure Engineer,8
+Senior,Data Integration Engineer,2
+Senior,Data Lead,6
+Senior,Data Management Specialist,5
+Senior,Data Manager,64
+Senior,Data Modeler,18
+Senior,Data Operations Analyst,8
+Senior,Data Operations Engineer,10
+Senior,Data Operations Manager,2
+Senior,Data Operations Specialist,2
+Senior,Data Product Manager,6
+Senior,Data Quality Analyst,12
+Senior,Data Quality Engineer,2
+Senior,Data Science Consultant,28
+Senior,Data Science Engineer,10
+Senior,Data Science Lead,7
+Senior,Data Science Manager,71
+Senior,Data Science Practitioner,10
+Senior,Data Science Tech Lead,1
+Senior,Data Scientist,1540
+Senior,Data Scientist Lead,1
+Senior,Data Specialist,19
+Senior,Data Strategist,14
+Senior,Data Strategy Manager,4
+Senior,Data Visualization Analyst,2
+Senior,Data Visualization Engineer,4
+Senior,Data Visualization Specialist,4
+Senior,Decision Scientist,32
+Senior,Deep Learning Engineer,6
+Senior,Deep Learning Researcher,1
+Senior,Director of Data Science,3
+Senior,ETL Developer,16
+Senior,Finance Data Analyst,2
+Senior,Head of Data,5
+Senior,Lead Data Analyst,1
+Senior,Lead Data Engineer,4
+Senior,Lead Data Scientist,6
+Senior,Lead Machine Learning Engineer,3
+Senior,ML Engineer,76
+Senior,MLOps Engineer,2
+Senior,Machine Learning Developer,2
+Senior,Machine Learning Engineer,833
+Senior,Machine Learning Infrastructure Engineer,23
+Senior,Machine Learning Manager,4
+Senior,Machine Learning Modeler,2
+Senior,Machine Learning Operations Engineer,1
+Senior,Machine Learning Researcher,7
+Senior,Machine Learning Scientist,59
+Senior,Machine Learning Software Engineer,11
+Senior,Manager Data Management,1
+Senior,Marketing Data Analyst,2
+Senior,NLP Engineer,10
+Senior,Principal Data Analyst,1
+Senior,Principal Data Engineer,3
+Senior,Principal Data Scientist,8
+Senior,Principal Machine Learning Engineer,3
+Senior,Product Data Analyst,1
+Senior,Research Analyst,22
+Senior,Research Engineer,106
+Senior,Research Scientist,185
+Senior,Software Data Engineer,2
+Senior,Staff Data Scientist,2
+Senior,Staff Machine Learning Engineer,1
+Executive,AI Architect,1
+Executive,AI Scientist,1
+Executive,Analytics Engineer,12
+Executive,Applied Machine Learning Engineer,1
+Executive,BI Data Analyst,1
+Executive,Business Intelligence Developer,2
+Executive,Business Intelligence Engineer,4
+Executive,Data Analyst,14
+Executive,Data Analytics Manager,2
+Executive,Data Architect,2
+Executive,Data Engineer,105
+Executive,Data Lead,6
+Executive,Data Manager,10
+Executive,Data Science Consultant,1
+Executive,Data Science Director,4
+Executive,Data Science Manager,7
+Executive,Data Scientist,30
+Executive,Director of Data Science,24
+Executive,Head of Data,27
+Executive,Head of Data Science,10
+Executive,Head of Machine Learning,2
+Executive,Lead Data Engineer,1
+Executive,Machine Learning Engineer,6
+Executive,Machine Learning Scientist,2
+Executive,Managing Director Data Science,1
+Executive,Principal Data Scientist,1
+Executive,Research Scientist,3
+Executive,Staff Data Analyst,1

@@ -1,0 +1,35 @@
+experience_level,job_category,count
+Executive,BI and Visualization,6
+Executive,Data Analysis,16
+Executive,Data Architecture and Modeling,2
+Executive,Data Engineering,106
+Executive,Data Science and Research,81
+Executive,Leadership and Management,57
+Executive,Machine Learning and AI,13
+Senior,BI and Visualization,242
+Senior,Cloud and Database,5
+Senior,Data Analysis,904
+Senior,Data Architecture and Modeling,225
+Senior,Data Engineering,1576
+Senior,Data Management and Strategy,28
+Senior,Data Quality and Operations,36
+Senior,Data Science and Research,2270
+Senior,Leadership and Management,307
+Senior,Machine Learning and AI,1116
+Mid-level,BI and Visualization,58
+Mid-level,Data Analysis,397
+Mid-level,Data Architecture and Modeling,32
+Mid-level,Data Engineering,483
+Mid-level,Data Management and Strategy,20
+Mid-level,Data Quality and Operations,16
+Mid-level,Data Science and Research,499
+Mid-level,Leadership and Management,129
+Mid-level,Machine Learning and AI,235
+Entry-level,BI and Visualization,7
+Entry-level,Data Analysis,140
+Entry-level,Data Engineering,95
+Entry-level,Data Management and Strategy,13
+Entry-level,Data Quality and Operations,3
+Entry-level,Data Science and Research,164
+Entry-level,Leadership and Management,10
+Entry-level,Machine Learning and AI,64

@@ -1,0 +1,126 @@
+label,average_salary,category
+AI Architect,249000.0,JobTitle
+AI Developer,140500.0,JobTitle
+AI Engineer,169208.41666666666,JobTitle
+AI Programmer,74000.0,JobTitle
+AI Research Engineer,67275.0,JobTitle
+AI Scientist,112277.77777777778,JobTitle
+AWS Data Architect,258000.0,JobTitle
+Analytics Engineer,154036.515625,JobTitle
+Analytics Engineering Manager,325000.0,JobTitle
+Applied Data Scientist,110863.63636363637,JobTitle
+Applied Machine Learning Engineer,140000.0,JobTitle
+Applied Machine Learning Scientist,113983.33333333333,JobTitle
+Applied Scientist,190171.60661764705,JobTitle
+Autonomous Vehicle Technician,82777.5,JobTitle
+Azure Data Engineer,100000.0,JobTitle
+BI Analyst,138991.0344827586,JobTitle
+BI Data Analyst,72812.5,JobTitle
+BI Data Engineer,60000.0,JobTitle
+BI Developer,114335.57692307692,JobTitle
+Big Data Architect,124999.5,JobTitle
+Big Data Engineer,89750.0,JobTitle
+Business Data Analyst,78333.33333333333,JobTitle
+Business Intelligence Analyst,125127.79629629629,JobTitle
+Business Intelligence Data Analyst,95000.0,JobTitle
+Business Intelligence Developer,111825.58823529411,JobTitle
+Business Intelligence Engineer,151292.91666666666,JobTitle
+Business Intelligence Manager,135000.0,JobTitle
+Business Intelligence Specialist,144153.0,JobTitle
+Cloud Data Architect,250000.0,JobTitle
+Cloud Data Engineer,131000.0,JobTitle
+Cloud Database Engineer,155000.0,JobTitle
+Compliance Data Analyst,45000.0,JobTitle
+Computer Vision Engineer,174336.0,JobTitle
+Computer Vision Software Engineer,94200.0,JobTitle
+Consultant Data Engineer,160000.0,JobTitle
+Data Analyst,109210.40778097983,JobTitle
+Data Analytics Consultant,81500.0,JobTitle
+Data Analytics Engineer,76400.0,JobTitle
+Data Analytics Lead,196666.66666666666,JobTitle
+Data Analytics Manager,145519.47368421053,JobTitle
+Data Analytics Specialist,95000.0,JobTitle
+Data Architect,163568.35211267605,JobTitle
+Data DevOps Engineer,69000.0,JobTitle
+Data Developer,103738.16666666667,JobTitle
+Data Engineer,145969.5854214123,JobTitle
+Data Infrastructure Engineer,201375.41666666666,JobTitle
+Data Integration Engineer,118000.0,JobTitle
+Data Integration Specialist,96605.0,JobTitle
+Data Lead,184642.85714285713,JobTitle
+Data Management Analyst,56000.0,JobTitle
+Data Management Specialist,106218.6,JobTitle
+Data Manager,109565.76515151515,JobTitle
+Data Modeler,126181.81818181818,JobTitle
+Data Modeller,67500.0,JobTitle
+Data Operations Analyst,92899.0,JobTitle
+Data Operations Engineer,133431.25,JobTitle
+Data Operations Manager,136000.0,JobTitle
+Data Operations Specialist,55355.0,JobTitle
+Data Product Manager,142750.0,JobTitle
+Data Product Owner,72500.0,JobTitle
+Data Quality Analyst,84409.0,JobTitle
+Data Quality Engineer,95000.0,JobTitle
+Data Science Consultant,102906.81818181818,JobTitle
+Data Science Director,201000.0,JobTitle
+Data Science Engineer,141117.85714285713,JobTitle
+Data Science Lead,167594.55,JobTitle
+Data Science Manager,202311.86363636365,JobTitle
+Data Science Practitioner,144480.0,JobTitle
+Data Science Tech Lead,375000.0,JobTitle
+Data Scientist,156411.67068878835,JobTitle
+Data Scientist Lead,134000.0,JobTitle
+Data Specialist,103102.5,JobTitle
+Data Strategist,95833.88888888889,JobTitle
+Data Strategy Manager,138750.0,JobTitle
+Data Visualization Analyst,120000.0,JobTitle
+Data Visualization Engineer,122975.0,JobTitle
+Data Visualization Specialist,122275.0,JobTitle
+Decision Scientist,164639.47368421053,JobTitle
+Deep Learning Engineer,200445.0,JobTitle
+Deep Learning Researcher,115000.0,JobTitle
+Director of Data Science,216846.2068965517,JobTitle
+ETL Developer,127470.55555555556,JobTitle
+ETL Engineer,58750.0,JobTitle
+Finance Data Analyst,128333.33333333333,JobTitle
+Financial Data Analyst,90375.0,JobTitle
+Head of Data,206651.51515151514,JobTitle
+Head of Data Science,183233.18181818182,JobTitle
+Head of Machine Learning,259000.0,JobTitle
+Insight Analyst,40125.0,JobTitle
+Lead Data Analyst,108333.33333333333,JobTitle
+Lead Data Engineer,140333.33333333334,JobTitle
+Lead Data Scientist,116546.0,JobTitle
+Lead Machine Learning Engineer,87000.0,JobTitle
+ML Engineer,197946.179245283,JobTitle
+MLOps Engineer,129800.0,JobTitle
+Machine Learning Developer,78500.0,JobTitle
+Machine Learning Engineer,184386.01009081735,JobTitle
+Machine Learning Infrastructure Engineer,155020.0,JobTitle
+Machine Learning Manager,156750.0,JobTitle
+Machine Learning Modeler,173350.0,JobTitle
+Machine Learning Operations Engineer,60000.0,JobTitle
+Machine Learning Research Engineer,58250.0,JobTitle
+Machine Learning Researcher,140852.9411764706,JobTitle
+Machine Learning Scientist,175361.68421052632,JobTitle
+Machine Learning Software Engineer,212907.6923076923,JobTitle
+Machine Learning Specialist,55000.0,JobTitle
+Manager Data Management,125000.0,JobTitle
+Managing Director Data Science,300000.0,JobTitle
+Marketing Data Analyst,137500.0,JobTitle
+Marketing Data Engineer,90000.0,JobTitle
+NLP Engineer,141725.0,JobTitle
+Power BI Developer,60000.0,JobTitle
+Principal Data Analyst,122500.0,JobTitle
+Principal Data Engineer,156666.66666666666,JobTitle
+Principal Data Scientist,188200.0,JobTitle
+Principal Machine Learning Engineer,181666.66666666666,JobTitle
+Product Data Analyst,80040.0,JobTitle
+Research Analyst,92653.2564102564,JobTitle
+Research Engineer,182483.45833333334,JobTitle
+Research Scientist,184225.9814126394,JobTitle
+Sales Data Analyst,60000.0,JobTitle
+Software Data Engineer,120000.0,JobTitle
+Staff Data Analyst,84999.33333333333,JobTitle
+Staff Data Scientist,134500.0,JobTitle
+Staff Machine Learning Engineer,185000.0,JobTitle

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company Size vs Salary vs Experience Level</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+        #chart-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 90%; /* Adjust the width as needed */
+            max-width: 1200px; /* Adjust the max width as needed */
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        #chart {
+            width: 100%; /* Full width of container */
+            height: 400px; /* Fixed height for the chart */
+        }
+        p {
+            margin-bottom: 20px;
+            width: 600px;
+            text-align: justify;
+        }
+        .chart {
+            font: 10px sans-serif;
+        }
+        .bar rect {
+            shape-rendering: crispEdges;
+        }
+        .bar text {
+            fill: #fff;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
+        }
+        .axis text {
+            font-size: 12px;
+        }
+        .legend {
+            font-size: 12px;
+            font-family: sans-serif;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .checkbox-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .checkbox {
+            margin: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+<h1>Company Size vs Salary vs Experience Level</h1>
+<div id="chart-container">
+    <div id="chart" class="chart">
+        <!-- Chart will be inserted here by D3.js -->
+    </div>
+    <div class="controls">
+        <div class="checkbox-container" id="experience-level-container">
+            <h3>Select Experience Levels:</h3>
+            <!-- Experience level checkboxes will be inserted here -->
+        </div>
+        <div class="checkbox-container" id="checkbox-container">
+            <h3>Select Company Sizes:</h3>
+            <!-- Company size checkboxes will be inserted here -->
+        </div>
+    </div>
+    <p>The chart titled "Company Size vs Salary vs Experience Level" offers a multi-dimensional comparison of average salaries based on company size and employee experience level. It uses grouped bar columns to represent salary ranges for small (S), medium (M), and large (L) companies at four levels of experience: Mid-level, Senior, Executive, and Entry-level. Notably, salaries increase with experience across all company sizes, with executive roles commanding the highest pay. Large companies generally offer higher salaries than their smaller counterparts at each experience level, and entry-level positions show the lowest salaries, emphasizing the growth potential in both position and company size.</p>
+</div>
+<script>
+    // Load data from CSV file
+    d3.csv("jobs_in_data.csv").then(function(data) {
+        const svg = d3.select("#chart").append("svg")
+            .attr("width", "100%")
+            .attr("height", 400);
+
+        const margin = {top: 20, right: 20, bottom: 70, left: 60},
+            width = svg.node().getBoundingClientRect().width - margin.left - margin.right,
+            height = svg.attr("height") - margin.top - margin.bottom,
+            g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        const experienceOrder = ["Entry-level", "Mid-level", "Senior", "Executive"];
+        const companySizes = Array.from(new Set(data.map(d => d.company_size)));
+
+        const x0 = d3.scaleBand().rangeRound([0, width]).paddingInner(0.1).domain(experienceOrder);
+        const x1 = d3.scaleBand().padding(0.05).domain(companySizes).rangeRound([0, x0.bandwidth()]);
+        const y = d3.scaleLinear().rangeRound([height, 0]);
+        const color = d3.scaleOrdinal().range(["#add8e6", "#90ee90", "#ffb6c1"]); // Light blue, light green, light coral
+
+        y.domain([0, d3.max(data, d => +d.salary_in_usd)]).nice();
+        color.domain(companySizes);
+
+        g.append("g")
+            .attr("class", "axis")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x0))
+            .append("text")
+            .attr("y", 40)
+            .attr("x", width / 2)
+            .attr("text-anchor", "end")
+            .attr("stroke", "black")
+            .text("Experience Level");
+
+        g.append("g")
+            .attr("class", "axis")
+            .call(d3.axisLeft(y).ticks(null, "s"))
+            .append("text")
+            .attr("x", 2)
+            .attr("y", y(y.ticks().pop()) + 0.5)
+            .attr("dy", "0.32em")
+            .attr("fill", "#000")
+            .attr("font-weight", "bold")
+            .attr("text-anchor", "start")
+            .text("Salary (USD)");
+
+        function updateChart(filteredExperienceLevels, filteredCompanySizes) {
+            g.selectAll(".bar-group").remove();
+
+            const filteredData = data.filter(d => filteredCompanySizes.includes(d.company_size) && filteredExperienceLevels.includes(d.experience_level));
+
+            const bars = g.append("g")
+                .attr("class", "bar-group")
+                .selectAll("g")
+                .data(filteredData)
+                .enter().append("g")
+                .attr("transform", d => "translate(" + x0(d.experience_level) + ",0)");
+
+            bars.selectAll("rect")
+                .data(d => [d])
+                .enter().append("rect")
+                .attr("x", d => x1(d.company_size))
+                .attr("y", d => y(+d.salary_in_usd))
+                .attr("width", x1.bandwidth())
+                .attr("height", d => height - y(+d.salary_in_usd))
+                .attr("fill", d => color(d.company_size));
+        }
+
+        const experienceContainer = d3.select("#experience-level-container");
+        experienceOrder.forEach(level => {
+            const label = experienceContainer.append("div")
+                .attr("class", "checkbox")
+                .append("label");
+            label.append("input")
+                .attr("type", "checkbox")
+                .attr("value", level)
+                .property("checked", true)
+                .on("change", function() {
+                    const selectedExperienceLevels = experienceContainer.selectAll("input:checked")
+                        .nodes()
+                        .map(node => node.value);
+                    const selectedSizes = companyContainer.selectAll("input:checked")
+                        .nodes()
+                        .map(node => node.value);
+                    updateChart(selectedExperienceLevels, selectedSizes);
+                });
+            label.append("span")
+                .text(level);
+        });
+
+        const companyContainer = d3.select("#checkbox-container");
+        companySizes.forEach(size => {
+            const label = companyContainer.append("div")
+                .attr("class", "checkbox")
+                .append("label");
+            label.append("input")
+                .attr("type", "checkbox")
+                .attr("value", size)
+                .property("checked", true)
+                .on("change", function() {
+                    const selectedExperienceLevels = experienceContainer.selectAll("input:checked")
+                        .nodes()
+                        .map(node => node.value);
+                    const selectedSizes = companyContainer.selectAll("input:checked")
+                        .nodes()
+                        .map(node => node.value);
+                    updateChart(selectedExperienceLevels, selectedSizes);
+                });
+            label.append("span")
+                .text(size);
+        });
+
+        updateChart(experienceOrder, companySizes);
+    });
+</script>
+</body>
+</html>

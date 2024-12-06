@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Experience Level vs Job Category</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+        }
+
+        header {
+            width: 100%;
+            background-color: #007ACC;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        #legend {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            margin: 0;
+            background-color: #ffffff;
+            border-right: 1px solid #ccc;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 1px solid #000;
+        }
+
+        #container {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #filters {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 20px;
+            background-color: #ffffff;
+            border-left: 1px solid #ccc;
+        }
+
+        #category-checkboxes {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #category-checkboxes label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        svg {
+            font: 10px sans-serif;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .line {
+            fill: none;
+            stroke-width: 3px;
+            stroke-linecap: round;
+        }
+
+        .line:hover {
+            stroke-width: 5px;
+        }
+
+        .axis text {
+            font-size: 14px;
+            fill: #4A4A4A;
+        }
+
+        .axis path,
+        .axis line {
+            stroke: #A9A9A9;
+        }
+
+        .y-axis-label {
+            font-size: 14px;
+            fill: #4A4A4A;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Experience Level vs Job Category</h1>
+</header>
+<div class="content">
+    <div id="legend">
+        <h3>Color Code:</h3>
+        <!-- Legend items will be dynamically added here -->
+    </div>
+    <div id="container">
+        <svg width="720" height="400"></svg>
+    </div>
+    <div id="filters">
+        <h3>Filter by Job Category:</h3>
+        <div id="category-checkboxes">
+            <!-- Checkboxes will be dynamically added here -->
+        </div>
+    </div>
+</div>
+<script>
+    const svg = d3.select("svg"),
+        margin = {top: 20, right: 80, bottom: 30, left: 100},
+        width = +svg.attr("width") - margin.left - margin.right,
+        height = +svg.attr("height") - margin.top - margin.bottom,
+        g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const x = d3.scalePoint().range([0, width]).padding(0.5),
+        y = d3.scaleLinear().range([height, 0]);
+
+    const colorMapping = {};
+
+    const line = d3.line()
+        .x(d => x(d.experience_level))
+        .y(d => y(d.count));
+
+    let allData, categories;
+
+    const experienceOrder = ["Entry-level", "Mid-level", "Senior", "Executive"];
+
+    d3.csv("experience_job_category.csv").then(function(data) {
+        allData = data.map(d => ({...d, count: +d.count})); // Use counts as-is
+        categories = Array.from(new Set(data.map(d => d.job_category))); // Get unique categories
+
+        const color = d3.scaleOrdinal(d3.schemeTableau10);
+        categories.forEach((category, index) => {
+            colorMapping[category] = color(index);
+        });
+
+        populateLegend();
+        populateFilters();
+        updateChart();
+
+        d3.select("#category-checkboxes").on("change", updateChart);
+    });
+
+    function populateLegend() {
+        const legend = d3.select("#legend");
+        legend.selectAll(".legend-item").remove(); // Clear existing legend items
+        categories.forEach(category => {
+            const colorBox = `<div class="legend-color" style="background-color: ${colorMapping[category]}"></div>`;
+            const legendItem = `<span>${category}</span>`;
+            legend.append("div")
+                .attr("class", "legend-item")
+                .html(`${colorBox} ${legendItem}`);
+        });
+    }
+
+    function populateFilters() {
+        const categoryCheckboxes = d3.select("#category-checkboxes");
+        categoryCheckboxes.selectAll("label").remove(); // Clear existing checkboxes
+        categories.forEach(category => {
+            categoryCheckboxes.append("label")
+                .html(`<input type="checkbox" value="${category}" checked> ${category}`);
+        });
+    }
+
+    function updateChart() {
+        const selectedCategories = Array.from(
+            d3.selectAll("#category-checkboxes input:checked").nodes(),
+            checkbox => checkbox.value
+        );
+
+        const filteredData = allData.filter(d => selectedCategories.includes(d.job_category));
+
+        x.domain(experienceOrder);
+        y.domain([0, d3.max(filteredData, d => +d.count)]);
+
+        svg.selectAll(".axis").remove();
+        svg.selectAll(".y-axis-label").remove();
+
+        g.append("g")
+            .attr("class", "axis axis--x")
+            .attr("transform", `translate(0,${height})`)
+            .call(d3.axisBottom(x));
+
+        g.append("g")
+            .attr("class", "axis axis--y")
+            .call(d3.axisLeft(y));
+
+        svg.append("text")
+            .attr("class", "y-axis-label")
+            .attr("transform", "rotate(-90)")
+            .attr("y", margin.left / 2 - 10)
+            .attr("x", -height / 2)
+            .attr("dy", "-1.5em")
+            .style("text-anchor", "middle")
+            .text("Major Jobs");
+
+        g.selectAll(".line").remove();
+
+        selectedCategories.forEach(function(category) {
+            const categoryData = filteredData
+                .filter(d => d.job_category === category)
+                .sort((a, b) => experienceOrder.indexOf(a.experience_level) - experienceOrder.indexOf(b.experience_level));
+
+            g.append("path")
+                .datum(categoryData)
+                .attr("class", "line")
+                .style("stroke", colorMapping[category])
+                .attr("d", line);
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Choices</title>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <style>
+    /* Reset default body margin and padding */
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url('image.jpg');
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      user-select: none;
+      overflow: hidden;
+    }
+
+    /* Centered content container */
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      color: white;
+    }
+
+    /* Title styling */
+    h1 {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Button container styling */
+    #buttonContainer {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      gap: 15px; /* Space between buttons */
+      align-items: center;
+    }
+
+    /* Enhanced button styling */
+    .button {
+      padding: 15px 35px;
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(135deg, #727275, #eaebec);
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      width: 200px; /* Fixed width to keep buttons aligned */
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg,  #727275, #eaebec);
+      transform: scale(1.05);
+    }
+
+    .button:active {
+      transform: scale(1.02);
+      background: linear-gradient(135deg,  #727275, #eaebec);
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Explore Your Choices</h1>
+    <div id="buttonContainer"></div>
+  </div>
+
+  <script>
+    const options = ["Salary", "Experience Level", "Job Category", "Job Title"];
+    const container = d3.select("#buttonContainer");
+
+    options.forEach(option => {
+      container.append("button")
+        .text(option)
+        .attr("class", "button")
+        .on("click", function() {
+          let link;
+          switch (option) {
+            case "Salary":
+              link = "salary.html";
+              break;
+            case "Experience Level":
+              link = "mixed.html";
+              break;
+            case "Job Category":
+              link = "job category.html";
+              break;
+            case "Job Title":
+              link = "job title.html";
+              break;
+            default:
+              console.log(`${option} button clicked`);
+              return;
+          }
+          window.location.href = link;
+        });
+    });
+  </script>
+</body>
+</html>
